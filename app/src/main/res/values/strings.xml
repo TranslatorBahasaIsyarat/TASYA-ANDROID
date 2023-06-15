@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TASYA Mobile</string>
+    <string name="camera">Camera</string>
+    <string name="history">History</string>
+    <string name="camera_fragment">Camera Fragment</string>
+    <string name="history_fragment">History Fragment</string>
+    <string name="camera_view">Camera View</string>
+    <string name="toggle_camera">Toggle Camera</string>
+    <string name="toggle_camera_button">Toggle Camera Button</string>
+    <string name="turn_on_the_camera">Turn on the camera</string>
+</resources>
