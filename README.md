@@ -18,4 +18,4 @@ Hello y'all, so this is our mobile application of our capstone project.
 
 ## Installation
 
-(Download TASYA APK)[TASYA.apk]
+[Download TASYA APK](TASYA.apk)
