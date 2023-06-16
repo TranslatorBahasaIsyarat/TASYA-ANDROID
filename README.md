@@ -1,3 +1,3 @@
 # TASYA Mobile
 
-[Download TASYA APK](tasya.apk)
+[Download TASYA APK](TASYA.apk)
