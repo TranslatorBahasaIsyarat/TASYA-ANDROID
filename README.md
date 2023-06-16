@@ -15,8 +15,7 @@ Welcome to TASYA Mobile, an innovative sign language translation app designed to
 
 To use TASYA Mobile, you need:
 
-- An Android device running Android SDK X.X.X or higher.
-- Kotlin programming language installed.
+- An Android device running Android SDK 21 or higher.
 
 ## Installation
 
