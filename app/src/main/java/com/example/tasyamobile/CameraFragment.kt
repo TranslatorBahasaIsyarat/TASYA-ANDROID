@@ -67,8 +67,12 @@ class CameraFragment : Fragment() {
 
         cameraExecutor = Executors.newSingleThreadExecutor()
         client = OkHttpClient()
-        socket = IO.socket("http://192.168.1.7:5000") // Replace with your Flask server IP
-        socket.connect()
+        try {
+            socket = IO.socket("http://34.128.77.146:8000") // Replace with your Flask server IP
+            socket.connect()
+        } catch (e: Exception){
+            Log.e("IO Socket", e.toString())
+        }
 
 
         if (!hasCameraPermission()) {
@@ -208,13 +212,13 @@ class CameraFragment : Fragment() {
 
     private fun sendFrameToServer(bitmap: Bitmap, width: Int, height: Int) {
         val outputStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, outputStream)
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 60, outputStream)
         val frameData = outputStream.toByteArray()
 
         val eventData = JSONObject()
         eventData.put("frame", Base64.encodeToString(frameData, Base64.DEFAULT))
-        eventData.put("width", width)
-        eventData.put("height", height)
+        eventData.put("width", width/3)
+        eventData.put("height", height/3)
 
         socket.emit("video_stream", eventData)
     }
@@ -279,7 +283,7 @@ class CameraFragment : Fragment() {
         rotationMatrix.postRotate(imageRotationDegrees.toFloat())
 
         // Rotate and convert the image to JPEG
-        yuvImage.compressToJpeg(rect, 100, outputStream)
+        yuvImage.compressToJpeg(rect, 85, outputStream)
         val jpegArray = outputStream.toByteArray()
 
         // Decode the rotated JPEG image
